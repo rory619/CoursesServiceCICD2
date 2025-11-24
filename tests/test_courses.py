@@ -25,7 +25,6 @@ def client():
         yield c 
         # --- teardown happens when the 'with' block exits --- 
  
-def test_create_user(client): 
-    r = client.post("/api/users", 
-json={"name":"Paul","email":"pl@atu.ie","age":25,"student_id":"S1234567"}) 
+def test_create_course(client):
+    r = client.post("/api/courses",json={"code": "CICD101", "name": "CICD", "credits": 5},)
     assert r.status_code == 201
